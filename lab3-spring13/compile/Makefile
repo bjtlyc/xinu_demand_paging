@@ -506,6 +506,8 @@ stacktrace.o: ./../sys/stacktrace.c ../h/conf.h ../h/kernel.h \
   ../h/systypes.h ../h/mem.h ../h/proc.h ../h/stdio.h
 suspend.o: ./../sys/suspend.c ../h/conf.h ../h/kernel.h ../h/systypes.h \
   ../h/mem.h ../h/proc.h ../h/q.h ../h/stdio.h
+testmain1.o: ./../sys/testmain1.c ../h/conf.h ../h/kernel.h \
+  ../h/systypes.h ../h/mem.h ../h/proc.h ../h/stdio.h ../h/paging.h
 testmain.o: ./../sys/testmain.c ../h/conf.h ../h/kernel.h ../h/systypes.h \
   ../h/mem.h ../h/proc.h ../h/stdio.h ../h/paging.h
 unsleep.o: ./../sys/unsleep.c ../h/conf.h ../h/kernel.h ../h/systypes.h \
@@ -542,7 +544,7 @@ vcreate.o: ./../TMP/vcreate.c ../h/conf.h ../h/i386.h ../h/kernel.h \
   ../h/systypes.h ../h/mem.h ../h/proc.h ../h/sem.h ../h/io.h \
   ../h/paging.h
 vfreemem.o: ./../TMP/vfreemem.c ../h/conf.h ../h/kernel.h ../h/systypes.h \
-  ../h/mem.h ../h/proc.h
+  ../h/mem.h ../h/proc.h ../h/paging.h
 vgetmem.o: ./../TMP/vgetmem.c ../h/conf.h ../h/kernel.h ../h/systypes.h \
   ../h/mem.h ../h/proc.h ../h/paging.h
 write_bs.o: ./../TMP/write_bs.c ../h/conf.h ../h/kernel.h ../h/systypes.h \
