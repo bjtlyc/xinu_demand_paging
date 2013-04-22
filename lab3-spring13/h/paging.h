@@ -81,7 +81,7 @@ SYSCALL write_bs(char *, bsd_t, int);
 #define NBPG		4096	/* number of bytes per page	*/
 #define FRAME0		1024	/* zero-th frame		*/
 
-#define NFRAMES 	1024	/* number of frames		*/
+#define NFRAMES 	50	/* number of frames		*/
 
 #define BSM_UNMAPPED	0
 #define BSM_MAPPED	1

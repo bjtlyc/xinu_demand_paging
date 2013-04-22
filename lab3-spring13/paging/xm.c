@@ -94,7 +94,12 @@ SYSCALL xmunmap(int virtpage )
                 while((ptep-ptbp) < 1024 && page < bsm_tab[i].bs_npages)
                 {
                     if(ptep->pt_pres == 1)
+                    {
                         write_bs((char*)(ptep->pt_base<<12),i,page);
+                        ptep->pt_pres = 0;
+                        int index = ((ptep->pt_base<<12)-1024*NBPG)/NBPG;
+                        frm_tab[index].fr_status = FRM_UNMAPPED;
+                    }
                     page++;
                     ptep++;
                 }
@@ -112,7 +117,12 @@ SYSCALL xmunmap(int virtpage )
                 while((ptep-ptbp) < 1024 && page < bsm_tab[i].bs_npages)
                 {
                     if(ptep->pt_pres == 1)
+                    {
                         write_bs((char*)(ptep->pt_base<<12),i,page);
+                        ptep->pt_pres = 0;
+                        int index = ((ptep->pt_base<<12)-1024*NBPG)/NBPG;
+                        frm_tab[index].fr_status = FRM_UNMAPPED;
+                    }
                     page++;
                     ptep++;
                 }

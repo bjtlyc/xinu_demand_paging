@@ -211,6 +211,9 @@ fr_map_t * getnext()
         }
         p = leastp->next;
         leastp->next = p->next;
+        pd_t * pdeaddr = (pd_t *)((pd_t*)proctab[p->fr_pid].pdbr + (p->fr_vpno >>10));
+        pt_t * pte = (pt_t *)(pdeaddr->pd_base << 12) + (p->fr_vpno&0x3ff);
+        pte->pt_pres = 0;
         return p;
 
     }
